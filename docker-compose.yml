@@ -1,0 +1,13 @@
+version: '3'
+services:
+    griddb:
+        build: .
+        image: griddb
+        container_name: griddb
+        volumes:
+            - ./data:/var/lib/gridstore/data:rw
+        ports:
+            - 20001:20001
+        environment:
+            GS_HOME: /var/lib/gridstore
+            GS_LOG: /var/lib/gridstore/log
